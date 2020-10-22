@@ -3,12 +3,12 @@
     <DigitalTransfromScroll
       class="digital-transform-item"
       v-for="(item, i) in digitals"
-      :key="i"
+      :key="i+'key'"
       :to="item"
       :interval="interval"
       :dislocation="dislocation"
       from="0"
-    >{{ item }}
+      >{{ item }}
     </DigitalTransfromScroll>
   </transition-group>
 </template>
@@ -57,28 +57,36 @@ export default {
   },
   methods: {
     parseDigital(digitals) {
+      console.log(digitals);
       let digitalsStr = `${digitals}`;
       if (this.useGrouping) {
         digitalsStr = digitalsStr.replace(/^-?\d+/g, (m) => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','));
       }
+      // if (this.value < 0) {
+      //   digitalsStr = `-${digitalsStr}`;
+      //   console.log(digitalsStr);
+      // }
       const digitalArr = digitalsStr.split('');
       this.oldDigtals = this.digitals.concat();
       this.digitals = digitalArr;
+      console.log(digitalArr);
     },
   },
 };
 </script>
 
 <style lang="stylus" scoped>
-  .digital-transform
-    display inline-flex
+.digital-transform {
+  display: inline-flex;
+}
 
-  .digital-transform-item
-    display inline-block;
-    transition opacity 0.3s, transform 0.3s;
+.digital-transform-item {
+  display: inline-block;
+  transition: opacity 0.3s, transform 0.3s;
+}
 
-  .vdt-slide-y-enter,
-  .vdt-slide-y-leave-to
-    opacity 0;
-    transform translateY(10px);
+.vdt-slide-y-enter, .vdt-slide-y-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
 </style>
