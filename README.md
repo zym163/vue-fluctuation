@@ -5,7 +5,7 @@
 
 ## Install
 ```
-npm install vue-fluctuation
+npm install @findsoft/vue-fluctuation
 ```
 
 ## Quick Start

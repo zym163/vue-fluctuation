@@ -1,13 +1,13 @@
 {
-  "name": "vue-fluctuation",
-  "version": "1.0.1",
+  "name": "@findsoft/vue-fluctuation",
+  "version": "1.0.3",
   "description": "a simple vue-component for the fluctuation of data",
   "license": "MIT",
   "author": "yanggoing",
-  "main": "dist/fluctuation.umd.min.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Yanggoing/vue-fluctuation"
+    "url": "git+https://github.com/Yanggoing/vue-fluctuation.git"
   },
   "homepage": "https://yanggoing.github.io/#/vue-fluctuation",
   "private": false,
@@ -39,5 +39,11 @@
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.6.11"
+  },
+  "bugs": {
+    "url": "https://github.com/Yanggoing/vue-fluctuation/issues"
+  },
+  "directories": {
+    "doc": "docs"
   }
 }

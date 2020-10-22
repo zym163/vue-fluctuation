@@ -3,13 +3,14 @@
   <div class="fluctuating-container">
     <slot></slot>
     <div class="data-container">
-      <digital-transform :value="value"
-                         :useGrouping="seperator"
-                         :interval="interval"
+      <digital-transform
+        :value="value"
+        :useGrouping="seperator"
+        :interval="interval"
       ></digital-transform>
-      <span class="unit-box">{{unit}}</span>
+      <span class="unit-box">{{ unit }}</span>
       <transition name="lotus">
-        <p class="fluctuating-animate" v-show="isShow">{{changeValue}}</p>
+        <p class="fluctuating-animate" v-show="isShow">{{ changeValue }}</p>
       </transition>
     </div>
   </div>
@@ -73,10 +74,10 @@ export default {
     isPlus(testVal, isSep) {
       // 判断是否为带有千分位符选项
       if (isSep) {
-        const changeStr = testVal.toString()
+        const changeStr = testVal
+          .toString()
           .replace(/^-?\d+/g, (m) => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','));
-        const result = changeStr.split('')
-          .join('');
+        const result = changeStr.split('').join('');
         const first = changeStr.split('')[0];
         if (first.match(/^[0-9]$/)) {
           return `+${result}`;
@@ -96,48 +97,56 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  .lotus-enter
-    transform translateY(20px)
-    opacity 0
+.lotus-enter {
+  transform: translateY(20px);
+  opacity: 0;
+}
 
-  .lotus-enter-active
-    transition all 0.5s cubic-bezier(1, 0.5, 0.8, 1)
+.lotus-enter-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
 
-  .lotus-leave-active
-    opacity 0
-    transition all 1s
+.lotus-leave-active {
+  opacity: 0;
+  transition: all 1s;
+}
 
-  .fluctuating-container
-    display flex
-    align-items center
+.fluctuating-container {
+  display: flex;
+  align-items: center;
 
-    i
-      margin-left 8px
-      margin-right 18px
-      font-size 22px
-      color #6A83DAFF
+  i {
+    margin-left: 8px;
+    margin-right: 18px;
+    font-size: 22px;
+    color: #6A83DAFF;
+  }
 
-    .data-container
-      position relative
-      display flex
-      font-size 16px
-      font-family SFProRounded-Bold, SFProRounded
-      font-weight bold
-      color rgba(0, 0, 0, 0.85)
-      line-height 19px
+  .data-container {
+    position: relative;
+    display: flex;
+    font-size: 16px;
+    font-family: SFProRounded-Bold, SFProRounded;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.85);
+    line-height: 19px;
 
-      .unit-box
-        margin-left 6px
-        line-height 19px
+    .unit-box {
+      margin-left: 6px;
+      line-height: 19px;
+    }
 
-      .fluctuating-animate
-        position absolute
-        justify-content space-around
-        top -36px
-        text-align center
-        font-family 'Arial-BoldItalicMT', 'Arial Bold Italic', 'Arial'
-        font-weight 700
-        font-style italic
-        font-size 18px
-        color limegreen
+    .fluctuating-animate {
+      position: absolute;
+      justify-content: space-around;
+      top: -36px;
+      text-align: center;
+      font-family: 'Arial-BoldItalicMT', 'Arial Bold Italic', 'Arial';
+      font-weight: 700;
+      font-style: italic;
+      font-size: 18px;
+      color: limegreen;
+    }
+  }
+}
 </style>

@@ -81,6 +81,7 @@
 </template>
 
 <script>
+/** eslint-disable */
 import Fluctuation from '@/components/Fluctuation';
 
 export default {
@@ -98,7 +99,7 @@ export default {
   },
   methods: {
     randomClick() {
-      this.testValue = Math.floor(Math.random() * (666666 - 1 + 1) + 1);
+      this.testValue = 0 - Math.floor(Math.random() * (666666 - 1 + 1) + 1);
     },
     randomSepClick() {
       this.testMoney = Math.floor(Math.random() * (10000000 - 1 + 1) + 1);
@@ -188,4 +189,16 @@ export default {
       .random-btn:hover
         animation shake 0.82s cubic-bezier(.36, .07, .19, .97) both
 
+</style>
+<style>
+.dt-scroll[data-v-0d345e36]{overflow:hidden;display:inline-block;height:1.5em}
+.dt-scroll-list[data-v-0d345e36]{display:inline-flex;flex-direction:column;transition-property:transform;transition-timing-function:cubic-bezier(.42,0,.62,1.2)}.digital-transform[data-v-1b7b4322]{display:inline-flex}
+.digital-transform-item[data-v-1b7b4322]{display:inline-block;transition:opacity .3s,transform .3s}
+.vdt-slide-y-enter[data-v-1b7b4322],.vdt-slide-y-leave-to[data-v-1b7b4322]{opacity:0;transform:translateY(10px)}
+.lotus-enter[data-v-04723324]{transform:translateY(20px);opacity:0}.lotus-enter-active[data-v-04723324]{transition:all .5s cubic-bezier(1,.5,.8,1)}.lotus-leave-active[data-v-04723324]{opacity:0;transition:all 1s}
+.fluctuating-container[data-v-04723324]{display:flex;align-items:center}
+.fluctuating-container i[data-v-04723324]{margin-left:8px;margin-right:18px;font-size:22px;color:#6a83da}
+.fluctuating-container .data-container[data-v-04723324]{position:relative;display:flex;font-size:16px;font-family:SFProRounded-Bold,SFProRounded;font-weight:700;color:rgba(0,0,0,.85);line-height:19px}
+.fluctuating-container .data-container .unit-box[data-v-04723324]{margin-left:6px;line-height:19px}.fluctuating-container .data-container
+.fluctuating-animate[data-v-04723324]{position:absolute;justify-content:space-around;top:-36px;text-align:center;font-family:Arial-BoldItalicMT,Arial Bold Italic,Arial;font-weight:700;font-style:italic;font-size:18px;color:#32cd32}
 </style>
