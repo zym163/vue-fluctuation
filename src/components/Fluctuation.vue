@@ -53,7 +53,7 @@ export default {
   watch: {
     value: {
       handler(newVal, oldVal) {
-        this.changeValue = this.isPlus(newVal - oldVal, this.seperator);
+        this.changeValue = this.isPlus((newVal * 1000000 - oldVal * 1000000) / 1000000, this.seperator);
         this.digitalDebounce();
       },
     },
