@@ -30,6 +30,10 @@ export default {
       default: 0,
       required: true,
     },
+    precision: {
+      type: Number,
+      default: 1,
+    },
     unit: {
       type: String,
       default: '',
@@ -53,7 +57,7 @@ export default {
   watch: {
     value: {
       handler(newVal, oldVal) {
-        this.changeValue = this.isPlus((newVal * 1000000 - oldVal * 1000000) / 1000000, this.seperator);
+        this.changeValue = this.isPlus(parseFloat((newVal - oldVal).toFixed(this.precision)), this.seperator);
         this.digitalDebounce();
       },
     },
