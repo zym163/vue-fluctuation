@@ -34,7 +34,8 @@ export default {
       value: 666666,
       isSep: false,
       unit: '个',
-      interval: 1000
+      interval: 1000,
+      precision:1
     };
   }
 };
@@ -57,3 +58,4 @@ export default {
 | separator             | Boolean       | 是否开启千分位分隔符                             | false     |
 | unit                  | String        | 数值单位，可以是任何你认为正确的单位                | ''        |
 | interval              | Number        | 数字滚动过渡时间（ms）                            | 500       |
+| precision             | Number        | 有小数时，精确到某一位                            | 1       |
