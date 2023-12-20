@@ -10,7 +10,7 @@
       ></digital-transform>
       <span class="unit-box">{{ unit }}</span>
       <transition name="lotus">
-        <p class="fluctuating-animate" v-show="isShow">{{ changeValue }}</p>
+        <p class="fluctuating-animate" v-show="isShow">{{ parseFloat(changeValue).toFixed(precision) }}</p>
       </transition>
     </div>
   </div>
@@ -57,7 +57,7 @@ export default {
   watch: {
     value: {
       handler(newVal, oldVal) {
-        this.changeValue = this.isPlus(parseFloat((newVal - oldVal).toFixed(this.precision)), this.seperator);
+        this.changeValue = this.isPlus((newVal - oldVal), this.seperator);
         this.digitalDebounce();
       },
     },
