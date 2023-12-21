@@ -10,6 +10,7 @@
       ></digital-transform>
       <span class="unit-box">{{ unit }}</span>
       <transition name="lotus">
+        <!-- 保留两位小数 -->
         <p class="fluctuating-animate" v-show="isShow">{{ parseFloat(changeValue).toFixed(precision) }}</p>
       </transition>
     </div>
